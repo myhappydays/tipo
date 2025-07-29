@@ -2,6 +2,7 @@
 .env
 *.env.local
 *.env.*.local
+backend/.env
 
 # Ignore compiled output and build artifacts
 /build
