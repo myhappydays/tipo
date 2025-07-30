@@ -3,7 +3,7 @@ package models
 type ContentResponse struct {
 	Title     string   `json:"title"`
 	Source    string   `json:"source"`
-	Category  string   `json:"category"`
-	Image     string   `json:"image"`
+	Keyword   string   `json:"keyword"`
+	PubDate   string   `json:"pubDate"`
 	Sentences []string `json:"sentences"`
 }

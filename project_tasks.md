@@ -28,15 +28,20 @@
     - [ ] 코드 포매터, 린터 등 개발 표준 도구 설정
 
 ### 마일스톤 1: 백엔드 API 구현
-- **목표:** 프론트엔드에서 사용할 콘텐츠 제공 API를 완성합니다.
+- **목표:** 프론트엔드에서 사용할 뉴스 콘텐츠 제공 API 및 트렌딩 키워드 API를 완성합니다.
 - **태스크:**
-    - [ ] Go 프로젝트 초기화 (`go mod init`)
-    - [ ] Naver API 연동을 위한 환경 변수 설정 (`.env`)
-    - [ ] `/api/content` 엔드포인트 라우팅 설정 (`main.go`)
-    - [ ] Naver API 호출 및 데이터 수신 로직 구현 (`handlers/content.go`)
-    - [ ] HTML 태그 등 불필요한 문자열 제거를 위한 데이터 정제 유틸리티 구현 (`utils/clean.go`)
-    - [ ] 프론트엔드에 전달할 최종 데이터 모델(struct) 정의 (`models/content.go`)
-    - [ ] API 엔드포인트 단위 테스트 코드 작성
+    - [x] Go 프로젝트 초기화 (`go mod init`)
+    - [x] Naver API 연동을 위한 환경 변수 설정 (`.env`)
+    - [x] `/api/content` 엔드포인트 라우팅 설정 (`main.go`)
+    - [x] `/api/content` Naver 뉴스 API 호출 및 데이터 수신 로직 구현 (`handlers/content.go`)
+        - `query`, `start`, `display` 파라미터 처리
+        - 다중 키워드 처리 및 기사 인터리빙
+        - `Source` (언론사), `Keyword` (검색 키워드), `PubDate` 필드 포함
+    - [x] HTML 태그 등 불필요한 문자열 제거를 위한 데이터 정제 유틸리티 구현 (`utils/clean.go`)
+    - [x] 프론트엔드에 전달할 최종 데이터 모델(struct) 정의 (`models/content.go`)
+    - [x] `/api/trending_keywords` 엔드포인트 라우팅 설정 (`main.go`)
+    - [x] `/api/trending_keywords` Google Trends RSS 파싱 로직 구현 (`handlers/trending.go`)
+    - [x] API 엔드포인트 단위 테스트 코드 작성
 
 ### 마일스톤 2: 프론트엔드 핵심 UI/UX 구현
 - **목표:** 사용자가 타자 연습을 수행할 수 있는 핵심 화면과 로직을 구현합니다.

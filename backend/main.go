@@ -17,6 +17,7 @@ func main() {
 	}
 
 	http.HandleFunc("/api/content", handlers.ContentHandler)
+	http.HandleFunc("/api/trending_keywords", handlers.TrendingKeywordsHandler)
 
 	fmt.Println("Server listening on port 8080...")
 	log.Fatal(http.ListenAndServe(":8080", nil))
